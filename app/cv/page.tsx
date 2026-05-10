@@ -15,7 +15,7 @@ const CONTACT = {
   linkedinHandle: 'in/danyglez94',
   github: 'https://github.com/DanyGlez94',
   githubHandle: '@DanyGlez94',
-  portfolio: 'https://danielgonzalez.dev',
+  portfolio: 'https://danygonzalez.dev',
   location: 'Mexico · Open to remote U.S. roles',
 }
 
