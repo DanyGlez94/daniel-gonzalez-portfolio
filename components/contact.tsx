@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, ArrowUpRight, Copy, Check } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
+import { CONTACT_INTRO } from '@/lib/site-config'
 import { useState } from 'react'
 
 const EMAIL = 'daniel_glez94@hotmail.com'
@@ -56,8 +57,7 @@ export default function Contact() {
             <span className="gradient-text">worth using</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
-            I&apos;m open to senior frontend or fullstack roles, technical leadership opportunities, and
-            consulting on complex UI/UX challenges. Let&apos;s talk.
+            {CONTACT_INTRO}
           </p>
         </motion.div>
 

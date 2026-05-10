@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Mail, ExternalLink } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
+import { HERO_BADGE } from '@/lib/site-config'
 
 const SOCIAL_LINKS = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/DanyGlez94' },
@@ -44,7 +45,7 @@ export default function Hero() {
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium border border-primary/30 bg-primary/10 text-primary tracking-wider uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Available for new opportunities
+            {HERO_BADGE}
           </span>
         </motion.div>
 
