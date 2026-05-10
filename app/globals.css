@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Dark-first portfolio theme */
+  --background: oklch(0.09 0.01 264);
+  --foreground: oklch(0.96 0.005 264);
+  --card: oklch(0.12 0.015 264);
+  --card-foreground: oklch(0.96 0.005 264);
+  --popover: oklch(0.11 0.015 264);
+  --popover-foreground: oklch(0.96 0.005 264);
+  --primary: oklch(0.65 0.22 250);
+  --primary-foreground: oklch(0.09 0.01 264);
+  --secondary: oklch(0.16 0.02 264);
+  --secondary-foreground: oklch(0.85 0.01 264);
+  --muted: oklch(0.16 0.015 264);
+  --muted-foreground: oklch(0.55 0.01 264);
+  --accent: oklch(0.65 0.22 250);
+  --accent-foreground: oklch(0.09 0.01 264);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.96 0.005 264);
+  --border: oklch(0.22 0.015 264);
+  --input: oklch(0.18 0.015 264);
+  --ring: oklch(0.65 0.22 250);
+  --radius: 0.75rem;
+
+  /* Custom portfolio tokens */
+  --surface-glass: oklch(0.14 0.015 264 / 0.7);
+  --grid-color: oklch(0.22 0.015 264 / 0.4);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.22 0.015 264) transparent;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  ::selection {
+    background: oklch(0.65 0.22 250 / 0.25);
+    color: oklch(0.96 0.005 264);
+  }
+}
+
+/* Grid background utility */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow utility (used by hero name) */
+.glow-text {
+  text-shadow: 0 0 30px oklch(0.65 0.22 250 / 0.5);
+}
+
+/* Glass surface */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.96 0.005 264) 0%, oklch(0.65 0.22 250) 50%, oklch(0.75 0.18 200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Print: zero @page margin (suppresses browser default header/footer). */
+/* Inner page padding comes from the CV article's print:p-* classes. */
+@media print {
+  @page {
+    margin: 0;
+    size: letter;
+  }
+}
