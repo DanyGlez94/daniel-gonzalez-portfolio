@@ -113,7 +113,7 @@ function SkillGroup({
         delay: index * 0.08,
         ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       }}
-      className="group relative z-40 p-6 rounded-2xl border border-border/50 bg-card hover:border-border/80 transition-all duration-300"
+      className="group relative z-40 p-6 rounded-2xl border border-border/50 bg-card hover:border-border/80 transition-colors duration-300"
       whileHover={{ y: -4 }}
     >
       <div className="flex items-center gap-3 mb-5">

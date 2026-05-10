@@ -55,7 +55,7 @@ function StrengthCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-      className="group relative z-40 p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 transition-all duration-300"
+      className="group relative z-40 p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 transition-colors duration-300"
       whileHover={{ y: -4 }}
     >
       <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
