@@ -80,14 +80,11 @@ function ProjectCard({
   index: number
   featured?: boolean
 }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-
   return (
     <motion.article
-      ref={ref}
       initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       className={`group relative z-40 rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/30 transition-all duration-500 ${
         featured ? 'md:col-span-2' : ''
