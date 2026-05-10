@@ -2,12 +2,30 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Mail, Globe, MapPin } from 'lucide-react'
 import { Github, Linkedin } from '@/components/icons'
+import { CV_LOCATION } from '@/lib/site-config'
 import PrintButton from './print-button'
 
+const CV_TITLE = 'CV'
+const CV_DESCRIPTION =
+  'Frontend Engineer · Accessibility & Compliance. 5+ years building secure, accessible web applications for U.S. government and enterprise clients.'
+
 export const metadata: Metadata = {
-  title: 'Daniel Gonzalez — CV',
-  description:
-    'Frontend Engineer · Accessibility & Compliance. 5+ years building secure, accessible web applications for U.S. government and enterprise clients.',
+  title: CV_TITLE,
+  description: CV_DESCRIPTION,
+  alternates: {
+    canonical: '/cv',
+  },
+  openGraph: {
+    title: `${CV_TITLE} — Daniel Gonzalez`,
+    description: CV_DESCRIPTION,
+    type: 'profile',
+    url: '/cv',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${CV_TITLE} — Daniel Gonzalez`,
+    description: CV_DESCRIPTION,
+  },
 }
 
 const CONTACT = {
@@ -17,7 +35,7 @@ const CONTACT = {
   github: 'https://github.com/DanyGlez94',
   githubHandle: '@DanyGlez94',
   portfolio: 'https://danygonzalez.dev',
-  location: 'Mexico · Open to remote U.S. roles',
+  location: CV_LOCATION,
 }
 
 const EXPERIENCE = [
