@@ -2,7 +2,8 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowUpRight, ExternalLink } from 'lucide-react'
+import { Github } from '@/components/icons'
 import Image from 'next/image'
 
 type Project = {

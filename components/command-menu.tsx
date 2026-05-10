@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Command, Github, Linkedin, Mail, User, Briefcase, Code2, Wrench, MessageSquare, X, ArrowRight } from 'lucide-react'
+import { Command, Mail, User, Briefcase, Code2, Wrench, MessageSquare, X, ArrowRight } from 'lucide-react'
+import { Github, Linkedin } from '@/components/icons'
 
 const SECTIONS = [
   { label: 'About', icon: User, href: '#about', description: 'Who is Daniel' },

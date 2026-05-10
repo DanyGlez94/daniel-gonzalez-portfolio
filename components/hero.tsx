@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { ArrowDown, Mail, ExternalLink } from 'lucide-react'
+import { Github, Linkedin } from '@/components/icons'
 
 const SOCIAL_LINKS = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/DanyGlez94' },

@@ -2,7 +2,8 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Github, Linkedin, Mail, ArrowUpRight, Copy, Check } from 'lucide-react'
+import { Mail, ArrowUpRight, Copy, Check } from 'lucide-react'
+import { Github, Linkedin } from '@/components/icons'
 import { useState } from 'react'
 
 const EMAIL = 'daniel_glez94@hotmail.com'

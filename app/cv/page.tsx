@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Github, Linkedin, Globe, MapPin } from 'lucide-react'
+import { ArrowLeft, Mail, Globe, MapPin } from 'lucide-react'
+import { Github, Linkedin } from '@/components/icons'
 import PrintButton from './print-button'
 
 export const metadata: Metadata = {
