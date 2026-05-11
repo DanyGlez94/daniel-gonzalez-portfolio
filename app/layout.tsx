@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 const SITE_URL = 'https://danygonzalez.dev'
 const SITE_TITLE = 'Daniel Gonzalez — Frontend Engineer'
 const SITE_DESCRIPTION =
-  'Fullstack JavaScript engineer with 5+ years across React, Node.js, and UX. Building secure, accessible, and compliance-focused web applications for U.S. government and enterprise clients. End-to-end work: UX mockups, React UI, middle-layer integrations, and WCAG 2.1 AA accessibility.'
+  'Fullstack JavaScript engineer with 5+ years shipping accessible React apps for U.S. govtech. End-to-end: UX, React UI, Node.js, WCAG 2.1 AA.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    creator: '@DanyGlez94',
+    creator: '@DanielGlez94',
   },
 }
 

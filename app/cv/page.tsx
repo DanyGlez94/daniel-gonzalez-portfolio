@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${CV_TITLE} — Daniel Gonzalez`,
     description: CV_DESCRIPTION,
-    type: 'profile',
+    type: 'website',
     url: '/cv',
   },
   twitter: {
