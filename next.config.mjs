@@ -20,7 +20,7 @@ const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com${vercelLive.script};
   style-src 'self' 'unsafe-inline'${vercelLive.style};
-  img-src 'self' blob: data: https://cdn.simpleicons.org${vercelLive.img};
+  img-src 'self' blob: data:${vercelLive.img};
   font-src 'self' data:${vercelLive.font};
   connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com${vercelLive.connect};
   frame-src ${vercelLive.frame};
