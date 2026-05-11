@@ -19,6 +19,11 @@ interface NavbarProps {
 export default function Navbar({ onCommandOpen }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isMac, setIsMac] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    setIsMac(/Mac|iPod|iPhone|iPad/i.test(navigator.userAgent))
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -82,7 +87,12 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
               whileHover={{ scale: 1.02 }}
               aria-label="Open command menu"
             >
-              <Command className="w-3 h-3" />
+              {isMac !== null &&
+                (isMac ? (
+                  <Command className="w-3 h-3" aria-hidden="true" />
+                ) : (
+                  <span className="text-[10px] font-semibold">Ctrl</span>
+                ))}
               <span>K</span>
             </motion.button>
 
