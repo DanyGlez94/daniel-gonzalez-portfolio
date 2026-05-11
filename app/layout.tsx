@@ -77,6 +77,33 @@ export const viewport = {
   initialScale: 1,
 }
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Daniel Gonzalez',
+  givenName: 'Daniel',
+  familyName: 'Gonzalez',
+  jobTitle: 'Frontend Engineer',
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  sameAs: [
+    'https://github.com/DanyGlez94',
+    'https://www.linkedin.com/in/danyglez94/',
+    'https://twitter.com/DanielGlez94',
+  ],
+  knowsAbout: [
+    'Frontend Engineering',
+    'React',
+    'TypeScript',
+    'Next.js',
+    'Node.js',
+    'Web Accessibility',
+    'WCAG 2.1 AA',
+    'GovTech',
+    'UX Design',
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -85,6 +112,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <CursorSpotlight />
         {children}
         <Analytics />
