@@ -4,7 +4,7 @@ Personal portfolio site for a fullstack JavaScript engineer focused on React, ac
 
 **Live:** [danygonzalez.dev](https://danygonzalez.dev)
 
-<!-- VIDEO PLACEHOLDER -->
+https://github.com/user-attachments/assets/47fa6194-c102-4924-8add-299ac590d11e
 
 ## Stack
 
