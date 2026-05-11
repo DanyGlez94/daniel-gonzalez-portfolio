@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Daniel Gonzalez', url: 'https://www.linkedin.com/in/danyglez94/' }],
   creator: 'Daniel Gonzalez',
+  verification: {
+    google: 'h0UKXsmv7Ne9AtNd1U_Qp9LzMQ4MIsCxX31HXQzhcaI',
+  },
   alternates: {
     canonical: '/',
   },
