@@ -116,7 +116,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 glass border-b border-border/60 md:hidden"
+            className="fixed top-16 left-0 right-0 z-50 glass border-b border-border/60 md:hidden"
           >
             <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
