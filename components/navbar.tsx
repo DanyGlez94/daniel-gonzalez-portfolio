@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Command } from 'lucide-react'
+import { NAVBAR_CTA } from '@/lib/site-config'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -102,7 +103,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Hire me
+              {NAVBAR_CTA}
             </motion.a>
 
             {/* Mobile menu button */}
@@ -145,7 +146,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium bg-primary text-primary-foreground"
                 >
-                  Hire me
+                  {NAVBAR_CTA}
                 </a>
               </div>
             </nav>

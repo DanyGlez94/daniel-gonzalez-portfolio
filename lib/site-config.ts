@@ -13,3 +13,5 @@ export const CONTACT_INTRO = OPEN_TO_WORK
 export const CV_LOCATION = OPEN_TO_WORK
   ? 'Mexico · Open to remote U.S. roles'
   : 'Mexico · Remote'
+
+export const NAVBAR_CTA = OPEN_TO_WORK ? 'Hire me' : 'Get in touch'
