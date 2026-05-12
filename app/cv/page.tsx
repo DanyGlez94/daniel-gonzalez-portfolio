@@ -50,7 +50,7 @@ const EXPERIENCE = [
       'Own end-to-end features across the stack: UX mockups, React UI, and Node.js backend connectors (REST APIs, PostgreSQL/MariaDB) — including configurable per-tenant widgets and feature-flag rollouts across multiple state and local agencies, serving 800+ U.S. agencies in total.',
       'Contribute to the team’s incremental migration of legacy PHP/HTML to React across customer-facing portals, alongside earlier work on frontend features and mobile-compatibility improvements.',
       'Design complete UX mockup flows for new compliance features — covering edge cases, validation errors, loading and confirmation states — aligned with the existing design system.',
-      'Shipped 20+ WCAG 2.1 AA remediation tickets across 7 customer-facing routes — focus management, screen reader support, programmatic error identification, keyboard navigation, and color contrast.',
+      'Shipped 100+ WCAG 2.1 AA remediation tickets across customer-facing routes — focus management, screen reader support, programmatic error identification, keyboard navigation, and color contrast.',
     ],
   },
   {
