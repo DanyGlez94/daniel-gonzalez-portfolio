@@ -128,10 +128,10 @@ export default function Experience() {
           </div>
           <a
             href="/cv"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200 font-mono shrink-0"
+            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-all duration-200 font-mono font-medium shrink-0 group"
           >
-            Full Resume
-            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+            View full resume
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
           </a>
         </motion.div>
 
