@@ -1,6 +1,6 @@
 // Toggle when ready to publicly signal job search. While false: neutral copy
 // across hero, contact, CV, and OG image. Flip this single flag to switch modes.
-export const OPEN_TO_WORK = false
+export const OPEN_TO_WORK = true
 
 export const HERO_BADGE = OPEN_TO_WORK
   ? 'Available for new opportunities'
