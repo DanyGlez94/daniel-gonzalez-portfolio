@@ -67,13 +67,21 @@ function ExperienceItem({
         {/* Period + company */}
         <div className="shrink-0">
           <p className="text-xs font-mono text-muted-foreground tracking-wider mb-1">{experience.period}</p>
-          <a
-            href={experience.companyUrl}
-            className="inline-flex items-center gap-1 py-0.5 -my-0.5 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200 group/link"
-          >
-            {experience.company}
-            <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" aria-hidden="true" />
-          </a>
+          {experience.companyUrl.startsWith('http') ? (
+            <a
+              href={experience.companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 py-0.5 -my-0.5 text-sm font-semibold text-foreground/80 hover:text-primary focus-visible:text-primary transition-colors duration-200 group/link"
+            >
+              {experience.company}
+              <span className="sr-only">(opens in a new tab)</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 group-focus-visible/link:opacity-100 transition-opacity" aria-hidden="true" />
+            </a>
+          ) : (
+            // No public site: plain text instead of a dead "#" link
+            <p className="text-sm font-semibold text-foreground/80">{experience.company}</p>
+          )}
         </div>
 
         {/* Content */}
