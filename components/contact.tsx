@@ -79,7 +79,7 @@ export default function Contact() {
 
           <button
             onClick={handleCopyEmail}
-            className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm font-mono border border-border/60 text-muted-foreground hover:text-foreground hover:border-primary/40 bg-secondary/20 hover:bg-secondary/50 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm font-mono border border-border/60 text-muted-foreground hover:text-foreground hover:border-primary/40 bg-secondary/20 hover:bg-secondary/50 transition-colors duration-200"
             aria-label="Copy email address"
           >
             {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
@@ -100,8 +100,7 @@ export default function Contact() {
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="group relative z-40 flex flex-col items-center gap-3 p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 transition-all duration-300"
-              whileHover={{ y: -4 }}
+              className="group relative z-40 flex flex-col items-center gap-3 p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 hover:-translate-y-1 transition-[border-color,translate] duration-300 ease-out"
             >
               <div className="w-10 h-10 rounded-xl bg-secondary/50 group-hover:bg-primary/10 border border-border/50 group-hover:border-primary/30 flex items-center justify-center transition-all duration-300">
                 <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" aria-hidden="true" />

@@ -83,18 +83,14 @@ export default function Hero() {
         <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <motion.a
             href="#work"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-200"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-[0.97] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
           >
             View Projects
             <ExternalLink className="w-4 h-4" />
           </motion.a>
           <motion.a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-border/70 text-foreground/80 hover:text-foreground hover:border-primary/50 hover:bg-secondary/50 transition-all duration-200"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-border/70 text-foreground/80 hover:text-foreground hover:border-primary/50 hover:bg-secondary/50 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-[0.97] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
           >
             Contact Me
           </motion.a>
@@ -109,9 +105,7 @@ export default function Hero() {
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
               aria-label={label}
-              className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground border border-border/50 hover:border-primary/40 bg-secondary/20 hover:bg-secondary/60 transition-all duration-200"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground border border-border/50 hover:border-primary/40 bg-secondary/20 hover:bg-secondary/60 hover:-translate-y-0.5 hover:scale-110 active:scale-95 transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
             >
               <Icon className="w-5 h-5" />
             </motion.a>

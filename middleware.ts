@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 const isPreview = process.env.VERCEL_ENV === 'preview'
+// In development React needs eval() for debugging features and Turbopack's HMR
+// talks over a websocket; neither is allowed (or needed) in production.
+const isDev = process.env.NODE_ENV === 'development'
 
 const vercelLive = {
   script: isPreview ? ' https://vercel.live' : '',
@@ -20,17 +23,17 @@ export function middleware(request: NextRequest) {
   // is much rarer than script-based, so this is an acceptable trade-off.
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://va.vercel-scripts.com${vercelLive.script};
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com${vercelLive.script};
     style-src 'self' 'unsafe-inline'${vercelLive.style};
     img-src 'self' blob: data:${vercelLive.img};
     font-src 'self' data:${vercelLive.font};
-    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com${vercelLive.connect};
+    connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com${vercelLive.connect}${isDev ? ' ws: wss:' : ''};
     frame-src ${vercelLive.frame};
     frame-ancestors 'none';
     base-uri 'self';
     form-action 'self';
     object-src 'none';
-    upgrade-insecure-requests;
+    ${isDev ? '' : 'upgrade-insecure-requests;'}
   `
     .replace(/\s{2,}/g, ' ')
     .trim()

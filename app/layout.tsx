@@ -121,6 +121,9 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           nonce={nonce}
+          // Browsers hide the nonce attribute after load (reads back as ""),
+          // which React reports as a hydration mismatch. The value is correct.
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <CursorSpotlight />

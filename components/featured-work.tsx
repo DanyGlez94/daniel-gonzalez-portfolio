@@ -86,10 +86,9 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-      className={`group relative z-40 rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/30 transition-colors duration-500 ${
+      className={`group relative z-40 rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/30 hover:-translate-y-1.5 transition-[border-color,translate] duration-500 ease-out [will-change:translate] ${
         featured ? 'md:col-span-2' : ''
       }`}
-      whileHover={{ y: -6 }}
     >
       {/* Hover glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -98,14 +97,21 @@ function ProjectCard({
 
       {/* Image */}
       <div className={`relative overflow-hidden ${featured ? 'h-72 md:h-80' : 'h-52'}`}>
-        <Image
-          src={project.image}
-          alt={`${project.title} preview`}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes={featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+        {/* The card is a single GPU layer that lifts as one bitmap. The zoom grows the
+            image box (inset) instead of using transform: scale, which would put the
+            image on its own layer and let it seam/flicker against the card while
+            both animate. The mask fades the image into the card in the same layer. */}
+        <div className="absolute inset-0 [mask-image:linear-gradient(to_top,transparent,rgb(0_0_0/0.8)_50%,black)]">
+          <div className="absolute inset-0 transition-[top,left,right] duration-700 ease-out group-hover:-top-[5%] group-hover:-inset-x-[2.5%]">
+            <Image
+              src={project.image}
+              alt={`${project.title} preview`}
+              fill
+              className="object-cover"
+              sizes={featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
+            />
+          </div>
+        </div>
 
         {/* Category badge */}
         <div className="absolute top-4 left-4">

@@ -49,7 +49,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-500 ${
           scrolled
             ? 'glass border-b border-border/60 shadow-2xl shadow-black/30'
             : 'bg-transparent border-b border-transparent'
@@ -59,8 +59,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
           {/* Logo */}
           <motion.a
             href="#"
-            className="font-mono text-sm font-medium tracking-wider text-foreground/90 hover:text-primary transition-colors duration-200"
-            whileHover={{ scale: 1.02 }}
+            className="font-mono text-sm font-medium tracking-wider text-foreground/90 hover:text-primary hover:scale-[1.02] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
           >
             <span className="text-primary">D</span>
             <span className="text-foreground/60">G</span>
@@ -72,8 +71,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary/50 transition-all duration-200"
-                whileHover={{ scale: 1.02 }}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary/50 transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
               >
                 {link.label}
               </motion.a>
@@ -84,8 +82,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
           <div className="flex items-center gap-3">
             <motion.button
               onClick={onCommandOpen}
-              className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs text-muted-foreground border border-border/60 hover:border-primary/40 hover:text-foreground bg-secondary/30 hover:bg-secondary/60 transition-all duration-200"
-              whileHover={{ scale: 1.02 }}
+              className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs text-muted-foreground border border-border/60 hover:border-primary/40 hover:text-foreground bg-secondary/30 hover:bg-secondary/60 hover:scale-[1.02] active:scale-[0.98] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
               aria-label="Open command menu"
             >
               {isMac !== null &&
@@ -99,9 +96,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
 
             <motion.a
               href="#contact"
-              className="hidden md:flex items-center px-4 py-1.5 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="hidden md:flex items-center px-4 py-1.5 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
             >
               {NAVBAR_CTA}
             </motion.a>
@@ -109,7 +104,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-all"
+              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
               aria-label="Toggle mobile menu"
               aria-expanded={mobileOpen}
             >
@@ -135,7 +130,7 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary/50 transition-all"
+                  className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary/50 transition-colors"
                 >
                   {link.label}
                 </a>
