@@ -61,11 +61,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring;
   }
   html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    /* Keep focused/anchored elements clear of the fixed 64px navbar (WCAG 2.4.11) */
+    scroll-padding-top: 5rem;
     scrollbar-width: thin;
     scrollbar-color: oklch(0.22 0.015 264) transparent;
   }
@@ -83,14 +85,27 @@
   [aria-disabled='true'] {
     cursor: not-allowed;
   }
-  /* Sections receive programmatic focus (e.g. from the command menu) for
-     screen readers; they are not interactive, so no focus ring. */
-  section[tabindex='-1']:focus {
+  /* Visible keyboard focus: solid ring color (>= 3:1 against the dark
+     background, WCAG 1.4.11) with a gap so it reads on filled buttons too. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  /* Sections and <main> receive programmatic focus (command menu, in-page
+     links, skip link) for screen readers; they are not interactive. */
+  [tabindex='-1']:focus {
     outline: none;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
   ::selection {
@@ -136,3 +151,4 @@
     size: letter;
   }
 }
+

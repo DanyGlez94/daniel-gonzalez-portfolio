@@ -184,7 +184,7 @@ export default function CommandMenu({ open, onClose }: CommandMenuProps) {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.04 }}
                       onClick={() => handleNavigate(item.href)}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left hover:bg-secondary/50 focus-visible:bg-secondary/50 focus-visible:outline-2 focus-visible:outline-primary/60 group transition-colors duration-150"
+                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left hover:bg-secondary/50 focus-visible:bg-secondary/50 focus-visible:outline-2 focus-visible:outline-primary group transition-colors duration-150"
                     >
                       <div className="w-8 h-8 rounded-lg bg-secondary/50 group-hover:bg-primary/10 group-focus-visible:bg-primary/10 border border-border/50 group-hover:border-primary/30 group-focus-visible:border-primary/30 flex items-center justify-center transition-all duration-200 shrink-0">
                         <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary group-focus-visible:text-primary transition-colors duration-200" aria-hidden="true" />
@@ -214,7 +214,7 @@ export default function CommandMenu({ open, onClose }: CommandMenuProps) {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: (SECTIONS.length + i) * 0.04 }}
                       onClick={() => handleNavigate(item.href)}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left hover:bg-secondary/50 focus-visible:bg-secondary/50 focus-visible:outline-2 focus-visible:outline-primary/60 group transition-colors duration-150"
+                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left hover:bg-secondary/50 focus-visible:bg-secondary/50 focus-visible:outline-2 focus-visible:outline-primary group transition-colors duration-150"
                     >
                       <div className="w-8 h-8 rounded-lg bg-secondary/50 group-hover:bg-primary/10 group-focus-visible:bg-primary/10 border border-border/50 group-hover:border-primary/30 group-focus-visible:border-primary/30 flex items-center justify-center transition-all duration-200 shrink-0">
                         <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary group-focus-visible:text-primary transition-colors duration-200" aria-hidden="true" />

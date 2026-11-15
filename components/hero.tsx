@@ -104,7 +104,7 @@ export default function Hero() {
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              aria-label={label}
+              aria-label={href.startsWith('http') ? `${label} (opens in a new tab)` : label}
               className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground border border-border/50 hover:border-primary/40 bg-secondary/20 hover:bg-secondary/60 hover:-translate-y-0.5 hover:scale-110 active:scale-95 transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
             >
               <Icon className="w-5 h-5" />

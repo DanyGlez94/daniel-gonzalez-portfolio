@@ -69,7 +69,7 @@ function ExperienceItem({
           <p className="text-xs font-mono text-muted-foreground tracking-wider mb-1">{experience.period}</p>
           <a
             href={experience.companyUrl}
-            className="inline-flex items-center gap-1 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200 group/link"
+            className="inline-flex items-center gap-1 py-0.5 -my-0.5 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200 group/link"
           >
             {experience.company}
             <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" aria-hidden="true" />
@@ -128,7 +128,7 @@ export default function Experience() {
           </div>
           <a
             href="/cv"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-all duration-200 font-mono font-medium shrink-0 group"
+            className="inline-flex items-center gap-2 py-0.5 -my-0.5 text-sm text-primary hover:text-primary/80 transition-all duration-200 font-mono font-medium shrink-0 group"
           >
             View full resume
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />

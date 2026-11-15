@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Command } from 'lucide-react'
 import { NAVBAR_CTA } from '@/lib/site-config'
@@ -21,6 +21,19 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isMac, setIsMac] = useState<boolean | null>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  // Escape closes the mobile menu and returns focus to its toggle button.
+  useEffect(() => {
+    if (!mobileOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      setMobileOpen(false)
+      menuButtonRef.current?.focus()
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [mobileOpen])
 
   useEffect(() => {
     setIsMac(/Mac|iPod|iPhone|iPad/i.test(navigator.userAgent))
@@ -59,10 +72,11 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
           {/* Logo */}
           <motion.a
             href="#"
-            className="font-mono text-sm font-medium tracking-wider text-foreground/90 hover:text-primary hover:scale-[1.02] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
+            className="p-2 -m-2 font-mono text-sm font-medium tracking-wider text-foreground/90 hover:text-primary hover:scale-[1.02] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
           >
             <span className="text-primary">D</span>
             <span className="text-foreground/60">G</span>
+            <span className="sr-only">, Daniel Gonzalez, back to top</span>
           </motion.a>
 
           {/* Desktop Nav */}
@@ -107,10 +121,12 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+              ref={menuButtonRef}
               aria-label="Toggle mobile menu"
               aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -124,9 +140,10 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
+            id="mobile-menu"
             className="fixed top-16 left-0 right-0 z-50 glass border-b border-border/60 md:hidden"
           >
-            <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
+            <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

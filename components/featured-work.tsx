@@ -128,7 +128,7 @@ function ProjectCard({
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${project.title} GitHub`}
+                aria-label={`${project.title} on GitHub (opens in a new tab)`}
                 className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -140,7 +140,7 @@ function ProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${project.title} live demo`}
+                aria-label={`${project.title} live demo (opens in a new tab)`}
                 className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary"
                 onClick={(e) => e.stopPropagation()}
               >

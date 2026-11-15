@@ -165,7 +165,7 @@ export default function CVPage() {
         </header>
 
         {/* CV document — always light, both screen and print */}
-        <main>
+        <main id="main-content" tabIndex={-1}>
         <article className="relative z-40 bg-white text-zinc-900 rounded-2xl shadow-2xl shadow-black/40 print:shadow-none print:rounded-none border border-zinc-200 print:border-0 p-10 md:p-14 print:px-12 print:py-10">
           {/* Header */}
           <header className="border-b border-zinc-200 pb-6 mb-8 print:pb-4 print:mb-5">

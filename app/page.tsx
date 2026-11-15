@@ -13,7 +13,7 @@ export default function Home() {
       {/* Navbar (<header>) and footer sit outside <main> so they are exposed as
           the page's banner and contentinfo landmarks. */}
       <SiteShell />
-      <main className="relative">
+      <main id="main-content" tabIndex={-1} className="relative">
         <Hero />
         <About />
         <Experience />

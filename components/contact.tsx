@@ -80,11 +80,15 @@ export default function Contact() {
           <button
             onClick={handleCopyEmail}
             className="inline-flex items-center gap-2 px-6 py-4 rounded-xl text-sm font-mono border border-border/60 text-muted-foreground hover:text-foreground hover:border-primary/40 bg-secondary/20 hover:bg-secondary/50 transition-colors duration-200"
-            aria-label="Copy email address"
           >
-            {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+            {copied ? <Check className="w-4 h-4 text-green-400" aria-hidden="true" /> : <Copy className="w-4 h-4" aria-hidden="true" />}
+            <span className="sr-only">Copy email address: </span>
             {copied ? 'Copied!' : EMAIL}
           </button>
+          {/* Announces the copy result to screen readers (WCAG 4.1.3) */}
+          <span role="status" className="sr-only">
+            {copied ? 'Email address copied to clipboard' : ''}
+          </span>
         </motion.div>
 
         {/* Social grid */}
@@ -108,6 +112,7 @@ export default function Contact() {
               <div className="text-center">
                 <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-0.5">{label}</p>
                 <p className="text-sm text-foreground/80 group-hover:text-foreground transition-colors duration-200">{handle}</p>
+                {href.startsWith('http') && <span className="sr-only">(opens in a new tab)</span>}
               </div>
             </motion.a>
           ))}
