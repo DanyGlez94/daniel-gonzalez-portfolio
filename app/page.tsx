@@ -9,15 +9,19 @@ import Footer from '@/components/footer'
 
 export default function Home() {
   return (
-    <main className="relative">
+    <>
+      {/* Navbar (<header>) and footer sit outside <main> so they are exposed as
+          the page's banner and contentinfo landmarks. */}
       <SiteShell />
-      <Hero />
-      <About />
-      <Experience />
-      <FeaturedWork />
-      <Skills />
-      <Contact />
+      <main className="relative">
+        <Hero />
+        <About />
+        <Experience />
+        <FeaturedWork />
+        <Skills />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
