@@ -153,7 +153,7 @@ export default function CVPage() {
     <div className="min-h-screen bg-background text-foreground py-10 px-4 print:p-0 print:bg-white print:min-h-0">
       <div className="max-w-5xl mx-auto">
         {/* Top toolbar — hidden in print */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <header className="flex items-center justify-between mb-6 print:hidden">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -162,9 +162,10 @@ export default function CVPage() {
             Back to portfolio
           </Link>
           <PrintButton />
-        </div>
+        </header>
 
         {/* CV document — always light, both screen and print */}
+        <main>
         <article className="relative z-40 bg-white text-zinc-900 rounded-2xl shadow-2xl shadow-black/40 print:shadow-none print:rounded-none border border-zinc-200 print:border-0 p-10 md:p-14 print:px-12 print:py-10">
           {/* Header */}
           <header className="border-b border-zinc-200 pb-6 mb-8 print:pb-4 print:mb-5">
@@ -287,7 +288,7 @@ export default function CVPage() {
             </aside>
 
             {/* Main */}
-            <main className="space-y-8 print:space-y-5">
+            <div className="space-y-8 print:space-y-5">
               <section>
                 <h2 className="text-xs font-bold tracking-widest uppercase text-blue-700 mb-4">
                   Experience
@@ -337,15 +338,18 @@ export default function CVPage() {
                   ))}
                 </div>
               </section>
-            </main>
+            </div>
           </div>
         </article>
+        </main>
 
         {/* Footer hint — screen only */}
-        <p className="text-center text-xs text-muted-foreground mt-6 print:hidden">
-          Tip: in your browser&apos;s print dialog, uncheck &quot;Headers and footers&quot; for a
-          cleaner one-page PDF.
-        </p>
+        <footer className="text-center text-xs text-muted-foreground mt-6 print:hidden">
+          <p>
+            Tip: in your browser&apos;s print dialog, uncheck &quot;Headers and footers&quot; for a
+            cleaner one-page PDF.
+          </p>
+        </footer>
       </div>
     </div>
   )
