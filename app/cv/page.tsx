@@ -342,7 +342,7 @@ export default function CVPage() {
         </article>
 
         {/* Footer hint — screen only */}
-        <p className="text-center text-xs text-muted-foreground/70 mt-6 print:hidden">
+        <p className="text-center text-xs text-muted-foreground mt-6 print:hidden">
           Tip: in your browser&apos;s print dialog, uncheck &quot;Headers and footers&quot; for a
           cleaner one-page PDF.
         </p>

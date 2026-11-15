@@ -86,7 +86,7 @@ function LogoMarquee() {
               alt=""
               className="w-10 h-10 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
             />
-            <span className="text-[11px] font-mono text-muted-foreground/60 tracking-wider uppercase">
+            <span className="text-[11px] font-mono text-muted-foreground tracking-wider uppercase">
               {tech.name}
             </span>
           </div>

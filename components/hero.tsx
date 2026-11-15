@@ -64,7 +64,7 @@ export default function Hero() {
           <p className="text-lg md:text-xl font-medium text-primary tracking-wide font-mono">
             Frontend Engineer
           </p>
-          <p className="text-[11px] md:text-xs font-mono text-muted-foreground/70 tracking-[0.3em] uppercase mt-2">
+          <p className="text-[11px] md:text-xs font-mono text-muted-foreground tracking-[0.3em] uppercase mt-2">
             Fullstack · UX · Accessibility
           </p>
         </motion.div>
