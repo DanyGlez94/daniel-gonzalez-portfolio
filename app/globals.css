@@ -65,6 +65,7 @@
   }
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
     scrollbar-width: thin;
     scrollbar-color: oklch(0.22 0.015 264) transparent;
   }
@@ -81,6 +82,11 @@
   button:disabled,
   [aria-disabled='true'] {
     cursor: not-allowed;
+  }
+  /* Sections receive programmatic focus (e.g. from the command menu) for
+     screen readers; they are not interactive, so no focus ring. */
+  section[tabindex='-1']:focus {
+    outline: none;
   }
   @media (prefers-reduced-motion: reduce) {
     html {

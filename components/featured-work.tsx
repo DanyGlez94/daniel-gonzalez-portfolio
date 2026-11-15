@@ -122,14 +122,14 @@ function ProjectCard({
 
         {/* Action links */}
         {(project.githubUrl || project.liveUrl) && (
-          <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+          <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} GitHub`}
-                className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200"
+                className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Github className="w-4 h-4" />
@@ -141,7 +141,7 @@ function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} live demo`}
-                className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200"
+                className="p-2 rounded-xl glass hover:bg-secondary/80 text-foreground/80 hover:text-foreground transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary"
                 onClick={(e) => e.stopPropagation()}
               >
                 <ExternalLink className="w-4 h-4" />

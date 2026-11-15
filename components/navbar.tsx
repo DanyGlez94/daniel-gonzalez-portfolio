@@ -84,6 +84,8 @@ export default function Navbar({ onCommandOpen }: NavbarProps) {
               onClick={onCommandOpen}
               className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs text-muted-foreground border border-border/60 hover:border-primary/40 hover:text-foreground bg-secondary/30 hover:bg-secondary/60 hover:scale-[1.02] active:scale-[0.98] transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out"
               aria-label="Open command menu"
+              aria-haspopup="dialog"
+              aria-keyshortcuts="Meta+K Control+K"
             >
               {isMac !== null &&
                 (isMac ? (
